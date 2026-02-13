@@ -1,6 +1,6 @@
 export default function APropos() {
   return (
-    <section className="about" id="about">
+    <section className="about" id="a-propos">
         <div className="container">
             <h2 className="section-title">À propos de moi</h2>
             <div className="about-content">

@@ -1,0 +1,37 @@
+export default function Passions() {
+  return (
+        <section className="interests" id="passions">
+        <div className="container">
+            <h2 className="section-title">Mes Passions</h2>
+            <div className="interests-grid">
+                <div className="interest-card" data-delay="0">
+                    <div className="interest-icon">⛰️</div>
+                    <h3>Randonnée</h3>
+                    <p>Exploration des paysages et déconnexion numérique.</p>
+                </div>
+                <div className="interest-card" data-delay="100">
+                    <div className="interest-icon">🖥️</div>
+                    <h3>PC Building</h3>
+                    <p>Assemblage et optimisation de configurations.</p>
+                </div>
+                <div className="interest-card" data-delay="200">
+                    <div className="interest-icon">🍳</div>
+                    <h3>Cuisine</h3>
+                    <p>Créativité culinaire et découverte de saveurs.</p>
+                </div>
+                <div className="interest-card" data-delay="300">
+                    <div className="interest-icon fas fa-vr-cardboard"></div>
+                    <h3>Réalité virtuelle / augmentée</h3>
+                    <p>Technologies immersives et expériences comme la réalité virtuelle / augmentée.</p>
+                </div>
+                <div className="interest-card" data-delay="400">
+                    <div className="interest-icon">🎤</div>
+                    <h3>Vocaloids</h3>
+                    <p>Passionné par l'univers des Vocaloids, notamment Hatsune Miku, et la musique synthétique
+                        japonaise.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  );
+}
