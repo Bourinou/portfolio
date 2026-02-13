@@ -3,8 +3,8 @@ import { useEffect } from 'react';
 
 export default function PageLoadEffects() {
     useEffect(() => {
-        document.body.classList.add('loaded');
-        document.body.classList.add('fade-in');
+        document.body.classList.add('charge');
+        document.body.classList.add('apparition');
 
         const ageText = document.getElementById('age');
         if (ageText) {

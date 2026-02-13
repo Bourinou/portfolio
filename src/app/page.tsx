@@ -9,18 +9,18 @@ import "@/app/page_accueil/page_accueil.css";
 export default function Home() {
   return (
     <>
-      <section className="hero" id="accueil">
-        <div className="hero-container">
+      <section className="banniere" id="accueil">
+        <div className="conteneur-banniere">
           <div>
-            <h1 className="hero-name" data-text="Dimitri PAPE">Dimitri PAPE</h1>
-            <div className="hero-details">
-              <p className="hero-age"><span id="age"> ans</span></p>
-              <p className="hero-title">Étudiant en BUT Informatique</p>
-              <p className="hero-subtitle">Passionné de développement web et de technologies innovantes</p>
+            <h1 className="nom-banniere" data-text="Dimitri PAPE">Dimitri PAPE</h1>
+            <div className="details-banniere">
+              <p className="age-banniere"><span id="age"> ans</span></p>
+              <p className="titre-banniere">Étudiant en BUT Informatique</p>
+              <p className="sous-titre-banniere">Passionné de développement web et de technologies innovantes</p>
             </div>
-            <div className="hero-cta">
-              <a className="cta-button" href="#a-propos">Découvrir mon profil</a>
-              <a className="cta-button cta-secondary" href="#contacts">Me contacter</a>
+            <div className="actions-banniere">
+              <a className="bouton-action" href="#a-propos">Découvrir mon profil</a>
+              <a className="bouton-action bouton-secondaire" href="#contacts">Me contacter</a>
             </div>
           </div>
         </div>
