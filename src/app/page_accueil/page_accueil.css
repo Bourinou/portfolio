@@ -1,7 +1,7 @@
 /* ====== SECTIONS SPÉCIFIQUES PAGE ACCUEIL ====== */
 
-/* Hero Section */
-.hero {
+/* ====== 1. BANNIÈRE / HERO ====== */
+.banniere {
   min-height: 100vh;
   display: flex;
   align-items: center;
@@ -9,30 +9,10 @@
   position: relative;
   overflow: hidden;
   margin-top: -4.5rem;
+  /* Compensation du padding-top de main pour effet plein écran */
 }
 
-.floating-element {
-  position: absolute;
-  font-size: 2rem;
-  opacity: 0.6;
-  animation: float 20s infinite linear;
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(0) rotate(0deg);
-  }
-
-  50% {
-    transform: translateY(-20px) rotate(180deg);
-  }
-
-  100% {
-    transform: translateY(0) rotate(360deg);
-  }
-}
-
-.hero-container {
+.conteneur-banniere {
   max-width: 1200px;
   margin: 0 auto;
   padding: 0 2rem;
@@ -41,11 +21,10 @@
   z-index: 2;
 }
 
-.hero-name {
+.nom-banniere {
   font-size: 4rem;
   font-weight: 900;
   background: transparent;
-  font-weight: 900;
   -webkit-text-stroke: 2px var(--texte-sombre);
   color: var(--cyan-primaire);
   margin-bottom: 1rem;
@@ -54,136 +33,90 @@
   position: relative;
 }
 
-.hero-name::before {
+.nom-banniere::before {
   content: attr(data-text);
   position: absolute;
   left: 0;
   top: -40%;
-  color: transparent;
   color: var(--rose-primaire);
-  background: transparent;
-  -webkit-background-clip: border-box;
-  background-clip: border-box;
   opacity: 0.1;
-  z-index: -5;
   clip-path: inset(0 100% 0 0);
   animation: revelationTexte 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
-.hero-details {
+.details-banniere {
   margin-bottom: 2rem;
-  animation: apparitionHaut 1s ease-out 0.5s both;
 }
 
-.hero-age {
+.age-banniere {
   font-size: 1.2rem;
   color: var(--rose-primaire);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.hero-title {
+.titre-banniere {
   font-size: 1.5rem;
   color: var(--texte-sombre);
   font-weight: 600;
   margin-bottom: 0.5rem;
 }
 
-.hero-subtitle {
+.sous-titre-banniere {
   font-size: 1.2rem;
   color: var(--texte-clair);
   margin-bottom: 1rem;
 }
 
-.hero-cta {
+.actions-banniere {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 1.5rem;
   justify-content: center;
   flex-wrap: wrap;
-  animation: apparitionHaut 1s ease-out 1s both;
 }
 
-/* About Section */
-.about,
+/* ====== 2. SECTIONS BACKGROUND ====== */
+.a-propos,
 #formation,
 #passions {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
 }
 
-.about-content {
-  max-width: 800px;
-  margin: 0 auto;
-  text-align: center;
-}
-
-.about-description {
-  font-size: 1.1rem;
-  color: var(--texte-clair);
-  margin-bottom: 1.5rem;
-  line-height: 1.8;
-}
-
-/* Skills Section */
-.skills-grid {
+/* ====== 3. COMPÉTENCES ====== */
+.grille-competences {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
 }
 
-.skill-card,
-.timeline-content,
-.projet-card,
-.interest-card,
-.contact-item,
-.content-section {
-  background: var(--fond-carte);
-  padding: 2rem;
-  border-radius: var(--rayon-bordure);
-  box-shadow: var(--ombre-legere);
-  border: 1px solid rgba(245, 169, 184, 0.2);
-  transition: var(--transition);
-  position: relative;
-}
-
-.skill-card:hover,
-.timeline-content:hover,
-.projet-card:hover,
-.interest-card:hover,
-.contact-item:hover,
-.content-section:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--ombre-lourde);
-  border-color: var(--rose-primaire);
-}
-
-.skill-icon {
+.icone-competence {
   font-size: 3rem;
   margin-bottom: 1rem;
   display: block;
   transition: all 0.3s ease;
 }
 
-.skill-card h3 {
+.carte-competence h3 {
   color: var(--texte-sombre);
   margin-bottom: 1rem;
 }
 
-.skill-card p {
+.carte-competence p {
   color: var(--texte-clair);
 }
 
-/* Timeline/Formation Section */
-.education-timeline {
+/* ====== 4. FORMATION ====== */
+.chronologie-formation {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
 }
 
-.education-timeline::before {
+.chronologie-formation::before {
   content: '';
   position: absolute;
   left: 15%;
@@ -195,7 +128,7 @@
   border-radius: 2px;
 }
 
-.timeline-item {
+.item-chronologie {
   display: flex;
   align-items: center;
   margin-bottom: 3rem;
@@ -203,7 +136,7 @@
   gap: 2rem;
 }
 
-.timeline-item::before {
+.item-chronologie::before {
   content: '';
   position: absolute;
   left: 15%;
@@ -217,81 +150,63 @@
   z-index: 2;
 }
 
-.timeline-date {
+.date-chronologie {
   flex: 0 0 120px;
   font-weight: 600;
   color: var(--rose-primaire);
   font-size: 1.1rem;
 }
 
-.timeline-content h3 {
+.contenu-chronologie h3 {
   color: var(--texte-sombre);
   margin-bottom: 0.5rem;
 }
 
-.institution {
+.etablissement {
   color: var(--cyan-primaire);
   font-weight: 500;
   margin-bottom: 1rem;
 }
 
-/* Projects Section */
-.projet-grid {
+/* ====== 5. PROJETS ====== */
+.grille-projets {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(358px, 1fr));
   gap: 2rem;
   margin-top: 2rem;
+  align-items: stretch;
+  justify-content: center;
 }
 
-.projet-card.featured {
+.grille-projets>a {
+  display: flex;
+  height: 100%;
+}
+
+.grille-projets .carte-projet {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  min-height: 19rem;
+}
+
+.carte-projet.mis-en-avant {
   border: 2px solid var(--rose-primaire);
   box-shadow: var(--ombre-lourde);
-  transform: scale(1.02);
 }
 
-.projet-card.featured:hover,
-.projet-card:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: var(--ombre-lourde);
-  border-color: var(--rose-primaire);
-  cursor: pointer;
-}
-
-.projet-card h3 {
+.carte-projet h3 {
   color: var(--texte-sombre);
-  margin-bottom: 0.5rem;
-}
-
-.period {
-  color: var(--cyan-primaire);
-  font-weight: 500;
-  margin-bottom: 1rem;
-  text-align: center;
+  display: flex;
+  flex-direction: column;
 }
 
 .description {
   color: var(--texte-clair);
-  line-height: 1.6;
-  margin-bottom: 1.5rem;
 }
 
-.tags {
-  display: flex;
-  flex-wrap: wrap;
-  gap: 0.5rem;
-  justify-content: center;
-}
-
-.tag {
-  background: var(--cyan-primaire);
-  color: var(--texte-sombre);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
-}
-
-.card-indicator {
+.indicateur-carte {
   position: absolute;
   top: 1.5rem;
   right: 1.5rem;
@@ -310,83 +225,52 @@
   z-index: 10;
 }
 
-.projet-card:hover .card-indicator {
+.carte-projet:hover .indicateur-carte {
   opacity: 1;
   transform: translateY(0) rotate(0);
 }
 
-.card-indicator i {
+.indicateur-carte i {
   font-size: 1.2rem;
 }
 
-/* Interests/Passions Section */
-.interests-grid {
+/* ====== 6. PASSIONS ====== */
+.grille-passions {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
   gap: 2rem;
-  margin-top: 2rem;
 }
 
-.interest-card::before {
-  content: '';
-  position: absolute;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background: radial-gradient(circle, rgba(245, 169, 184, 0.2) 0%, transparent 70%);
-  opacity: 0;
-  transition: opacity 0.3s;
-}
-
-.interest-card:hover::before {
-  opacity: 1;
-}
-
-.interest-icon {
+.icone-passion {
   font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-  position: relative;
-  z-index: 2;
+  margin-top: -1rem;
 }
 
-.interest-card h3 {
-  color: var(--texte-sombre);
-  margin-bottom: 1rem;
-  position: relative;
-  z-index: 2;
-}
-
-.interest-card p {
+.carte-passion p {
+  margin-top: 0.5rem;
   color: var(--texte-clair);
-  position: relative;
-  z-index: 2;
 }
 
-/* Contact Section */
-.contact-content {
-  max-width: 800px;
+/* ====== 7. CONTACT ====== */
+.contenu-contact {
+  max-width: 82%;
   margin: 0 auto;
 }
 
-.contact-info {
+.infos-contact {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-  gap: 1.5rem;
-  justify-items: center;
+  gap: 2rem;
 }
 
-.contact-item {
-  width: 100%;
-  max-width: 250px;
+.item-contact {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
-.contact-icon {
+.icone-contact {
   width: 60px;
   height: 60px;
   background: var(--cyan-primaire);
@@ -395,75 +279,42 @@
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
-  font-size: 1.5rem;
+  font-size: 2rem;
   color: var(--texte-sombre);
-  box-shadow: 0 5px 15px rgba(91, 206, 250, 0.3);
 }
 
-.contact-details h4 {
-  color: var(--texte-sombre);
+.details-contact h4 {
   margin-bottom: 0.5rem;
 }
 
-.contact-details a,
-.contact-details p {
+.details-contact a {
   color: var(--texte-clair);
-  transition: var(--transition);
 }
 
-/* Animations */
-@keyframes apparitionHaut {
-  from {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes revelationTexte {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
-@keyframes lueurNom {
-  from {
-    text-shadow: 4px 4px 0px var(--rose-primaire);
-  }
-
-  to {
-    text-shadow: 8px 8px 0px var(--rose-primaire);
-  }
-}
-
-/* Responsive - Page Accueil */
+/* ====== 8. RESPONSIVE (Page Accueil) ====== */
 @media (max-width: 768px) {
-  .hero-name {
+  .nom-banniere {
     font-size: 2.5rem;
   }
 
-  .skills-grid,
-  .projet-grid,
-  .interests-grid {
+  .grille-competences,
+  .grille-projets,
+  .grille-passions {
     grid-template-columns: 1fr;
   }
 
-  .hero-cta {
+  .actions-banniere {
     flex-direction: column;
     align-items: center;
   }
 
-  .timeline-item {
+  .item-chronologie {
     display: block;
     margin-bottom: 2rem;
     padding-left: 5%;
   }
 
-  .timeline-date {
+  .date-chronologie {
     flex: 0 0 auto;
     max-width: 40%;
     padding-left: 5%;
@@ -471,30 +322,27 @@
     overflow-wrap: break-word;
   }
 
-  .timeline-content {
+  .contenu-chronologie {
     margin-left: 0;
     margin-top: 1rem;
     width: 100%;
   }
 
-  .education-timeline::before {
-    left: 0;
-  }
-
-  .timeline-item::before {
+  .chronologie-formation::before,
+  .item-chronologie::before {
     left: 0;
   }
 }
 
 @media (max-width: 480px) {
-  .hero-name {
+  .nom-banniere {
     font-size: 2rem;
   }
 
-  .skill-card,
-  .projet-card,
-  .interest-card,
-  .contact-item {
+  .carte-competence,
+  .carte-projet,
+  .carte-passion,
+  .item-contact {
     padding: 1.5rem;
   }
 }

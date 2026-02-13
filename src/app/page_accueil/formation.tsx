@@ -1,28 +1,28 @@
 export default function Education() {
-  return (
+    return (
         <section id="formation">
-        <div className="container">
-            <h2 className="section-title">Ma Formation</h2>
-            <div className="education-timeline">
-                <div className="timeline-item" data-delay="0">
-                    <div className="timeline-date">2024 - 2027</div>
-                    <div className="timeline-content">
-                        <h3>BUT Informatique</h3>
-                        <p className="institution">IUT de Montpellier</p>
-                        <p>Formation complète en informatique couvrant le développement logiciel, les bases de données,
-                            les réseaux et la gestion de projet.</p>
+            <div className="conteneur">
+                <h2 className="titre-section">Ma Formation</h2>
+                <div className="chronologie-formation">
+                    <div className="item-chronologie" data-delay="0">
+                        <div className="date-chronologie">2024 - 2027</div>
+                        <div className="contenu-chronologie">
+                            <h3>BUT Informatique</h3>
+                            <p className="etablissement">IUT de Montpellier</p>
+                            <p>Formation complète en informatique couvrant le développement logiciel, les bases de données,
+                                les réseaux et la gestion de projet.</p>
+                        </div>
                     </div>
-                </div>
-                <div className="timeline-item" data-delay="200">
-                    <div className="timeline-date">2021 - 2024</div>
-                    <div className="timeline-content">
-                        <h3>Baccalauréat Général</h3>
-                        <p className="institution">Lycée</p>
-                        <p>Spécialités Mathématiques et Numérique &amp; Sciences Informatiques (NSI).</p>
+                    <div className="item-chronologie" data-delay="200">
+                        <div className="date-chronologie">2021 - 2024</div>
+                        <div className="contenu-chronologie">
+                            <h3>Baccalauréat Général</h3>
+                            <p className="etablissement">Lycée</p>
+                            <p>Spécialités Mathématiques et Numérique &amp; Sciences Informatiques (NSI).</p>
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
-  );
+        </section>
+    );
 }
