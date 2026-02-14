@@ -27,12 +27,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={poppins.className}>
-      <SpeedInsights />
       <body>
         <Navbar />
         <PageLoadEffects />
         <main> {children} </main>
         <Footer />
+        <SpeedInsights />
       </body>
     </html>
 
