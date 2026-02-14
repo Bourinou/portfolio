@@ -20,7 +20,7 @@ export default function Home() {
             </div>
             <div className="actions-banniere">
               <a className="bouton-action" href="#a-propos">Découvrir mon profil</a>
-              <a className="bouton-action bouton-secondaire" href="#contacts">Me contacter</a>
+              <a className="bouton-secondaire" href="#contacts">Me contacter</a>
             </div>
           </div>
         </div>

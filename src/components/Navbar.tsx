@@ -11,9 +11,7 @@ export default function Navbar() {
       <nav className="barre-navigation">
         <div className="conteneur-nav">
           <Link href="/#accueil" onClick={() => setIsMenuOpen(false)}>
-            <div className="logo-nav">
-              <span className="texte-logo">Bourinou</span>
-            </div>
+            <span className="logo-nav">Bourinou</span>
           </Link>
 
           <ul className={`nav-menu ${isMenuOpen ? 'active' : ''}`}>
