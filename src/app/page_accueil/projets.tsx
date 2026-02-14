@@ -10,7 +10,7 @@ export default function Projets() {
                 <div className="grille-projets">
 
                     <Link href="projets/demos">
-                        <div className="carte-projet mis-en-avant">
+                        <div className="carte mis-en-avant">
                             <div className="indicateur-carte">
                                 <FaExternalLinkAlt />
                             </div>
@@ -28,7 +28,7 @@ export default function Projets() {
                     </Link>
 
                     <Link href="projets/ndi2024">
-                        <div className="carte-projet">
+                        <div className="carte">
                             <div className="indicateur-carte">
                                 <FaExternalLinkAlt />
                             </div>
@@ -45,14 +45,14 @@ export default function Projets() {
                     </Link>
 
                     <Link href="projets/pokemongame">
-                        <div className="carte-projet">
+                        <div className="carte">
                             <div className="indicateur-carte">
                                 <FaExternalLinkAlt />
                             </div>
                             <h3>Jeu de Cartes Pokémon</h3>
                             <p className="periode">2024</p>
-                            <p className="description">Jeu de cartes Pokémon développé en JavaFX : interface graphique moderne,
-                                logique de jeu fidèle, gestion d’événements.</p>
+                            <p className="description">Jeu de cartes Pokémon développé en Java et JavaFX:
+                                logique , gestion d’événements, etc.</p>
                             <div className="etiquettes">
                                 <span className="etiquette">Java</span>
                                 <span className="etiquette">JavaFX</span>
@@ -62,7 +62,7 @@ export default function Projets() {
                     </Link>
 
                     <Link href="projets/escapegame">
-                        <div className="carte-projet">
+                        <div className="carte">
                             <div className="indicateur-carte">
                                 <FaExternalLinkAlt />
                             </div>
