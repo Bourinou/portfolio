@@ -49,13 +49,10 @@ export default function Contacts() {
                             </div>
                             <div className="details-contact">
                                 <h4>Adresse</h4>
-                                <p>
                                     <Link href="https://maps.app.goo.gl/zvxMB62Pp6QSSKTG8" target="_blank">
                                         <p>Hôpitaux-Facultés</p>
                                         <p>Montpellier</p>
                                     </Link>
-                                </p>
-
                             </div>
                         </div>
 
