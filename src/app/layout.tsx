@@ -4,6 +4,7 @@ import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageLoadEffects from "@/components/PageLoadEffects";
 import Footer from "@/components/Footer";
+import { SpeedInsights } from "@vercel/speed-insights/next";
 
 export const metadata: Metadata = {
   title: {
@@ -26,6 +27,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="fr" className={poppins.className}>
+      <SpeedInsights />
       <body>
         <Navbar />
         <PageLoadEffects />
