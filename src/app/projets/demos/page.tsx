@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
     title: "Demos",
@@ -63,9 +64,9 @@ export default function Demos() {
 
                 <div className="details-projet">
                     <a className="bouton-action"
-                        href="https://webinfo.iutmontp.univ-montp2.fr/~cerisierr/demos_dev/web/controleurFrontal.php"
+                        href="https://webinfo.iutmontp.univ-montp2.fr/~cerisierr/demos/web/"
                         target="_blank">
-                        Voir le site <i className="fas fa-external-link-alt"></i>
+                        Voir le site <FaExternalLinkAlt />
                     </a>
                 </div>
             </div>
