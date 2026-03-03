@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
     title: "Nuit de l'Info 2024",
@@ -61,7 +62,7 @@ export default function Ndi2024() {
                         <li>Développement Front-end (HTML, CSS, JS)</li>
                         <li>Collaboration et gestion projet avec GitHub</li>
                     </ul>
-                    <a className="bouton-action" href="https://ndi.faceoff.watch" target="_blank">Voir le site réalisé</a>
+                    <a className="bouton-action" href="https://ndi.faceoff.watch" target="_blank">Voir le site <FaExternalLinkAlt /></a>
                 </div>
             </div>
             <div className="etiquettes">

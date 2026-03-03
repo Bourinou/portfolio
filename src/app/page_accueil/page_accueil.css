@@ -1,83 +1,5 @@
-/* ====== SECTIONS SPÉCIFIQUES PAGE ACCUEIL ====== */
+/* ====== SECTIONS BACKGROUND ====== */
 
-/* ====== 1. BANNIÈRE / HERO ====== */
-.banniere {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-  padding: 0;
-  position: relative;
-  overflow: hidden;
-  margin-top: -4.5rem;
-  /* Compensation du padding-top de main pour effet plein écran */
-}
-
-.conteneur-banniere {
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 0 2rem;
-  text-align: center;
-  position: relative;
-  z-index: 2;
-}
-
-.nom-banniere {
-  font-size: 4rem;
-  font-weight: 900;
-  background: transparent;
-  -webkit-text-stroke: 2px var(--texte-sombre);
-  color: var(--cyan-primaire);
-  margin-bottom: 1rem;
-  text-shadow: 4px 4px 0px var(--rose-primaire);
-  animation: lueurNom 1.5s ease-in-out infinite alternate;
-  position: relative;
-}
-
-.nom-banniere::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: -40%;
-  color: var(--rose-primaire);
-  opacity: 0.1;
-  clip-path: inset(0 100% 0 0);
-  animation: revelationTexte 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
-}
-
-.details-banniere {
-  margin-bottom: 2rem;
-}
-
-.age-banniere {
-  font-size: 1.2rem;
-  color: var(--rose-primaire);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.titre-banniere {
-  font-size: 1.5rem;
-  color: var(--texte-sombre);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
-}
-
-.sous-titre-banniere {
-  font-size: 1.2rem;
-  color: var(--texte-clair);
-  margin-bottom: 1rem;
-}
-
-.actions-banniere {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 1.5rem;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-/* ====== 2. SECTIONS BACKGROUND ====== */
 .a-propos,
 #formation,
 #passions {
@@ -85,7 +7,8 @@
   backdrop-filter: blur(20px);
 }
 
-/* ====== 3. COMPÉTENCES ====== */
+/* ====== COMPÉTENCES ====== */
+
 .grille-competences {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -100,7 +23,8 @@
   transition: all 0.3s ease;
 }
 
-/* ====== 4. FORMATION ====== */
+/* ====== FORMATION ====== */
+
 .chronologie-formation {
   max-width: 800px;
   margin: 0 auto;
@@ -159,7 +83,8 @@
   margin-bottom: 1rem;
 }
 
-/* ====== 5. PROJETS ====== */
+/* ====== PROJETS GRILLE ====== */
+
 .grille-projets {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(358px, 1fr));
@@ -217,7 +142,8 @@
   font-size: 1.2rem;
 }
 
-/* ====== 6. PASSIONS ====== */
+/* ====== PASSIONS ====== */
+
 .grille-passions {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(25%, 1fr));
@@ -229,7 +155,8 @@
   margin-top: -1rem;
 }
 
-/* ====== 7. CONTACT ====== */
+/* ====== CONTACT ====== */
+
 .contenu-contact {
   max-width: 85%;
   margin: 0 auto;
@@ -269,7 +196,8 @@
   color: var(--texte-clair);
 }
 
-/* ====== 8. RESPONSIVE (Page Accueil) ====== */
+/* ====== RESPONSIVE PAGE ACCUEIL ====== */
+
 @media (max-width: 768px) {
   .nom-banniere {
     font-size: 2.5rem;
@@ -289,35 +217,41 @@
   .item-chronologie {
     display: block;
     margin-bottom: 2rem;
-    padding-left: 5%;
+    padding-left: 2rem;
   }
 
   .date-chronologie {
     flex: 0 0 auto;
     max-width: 40%;
-    padding-left: 5%;
+    padding-left: 0.5rem;
+    margin-bottom: 0.75rem;
     white-space: normal;
     overflow-wrap: break-word;
   }
 
   .contenu-chronologie {
     margin-left: 0;
-    margin-top: 1rem;
+    margin-top: 0;
     width: 100%;
   }
 
-  .chronologie-formation::before,
+  .chronologie-formation::before {
+    left: 10px;
+    transform: none;
+  }
+
   .item-chronologie::before {
-    left: 0;
+    left: 10px;
+    transform: translateX(-50%);
+  }
+
+  .item-chronologie .carte:hover {
+    transform: translateY(-6px) scale(1.01);
   }
 }
 
 @media (max-width: 480px) {
   .nom-banniere {
     font-size: 2rem;
-  }
-
-  .carte {
-    padding: 1.5rem;
   }
 }

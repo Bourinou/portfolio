@@ -1,4 +1,5 @@
 import { Metadata } from "next";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 export const metadata: Metadata = {
   title: "Escape Game",
@@ -60,7 +61,7 @@ export default function EscapeGame() {
             <li>Création d’énigmes et parcours utilisateur interactif</li>
             <li>Ambiance graphique pensée pour l’immersion</li>
           </ul>
-          <a className="bouton-action" href="https://bourinou.github.io/escapegame/" target="_blank">Voir le site</a>
+          <a className="bouton-action" href="https://bourinou.github.io/escapegame/" target="_blank">Voir le site <FaExternalLinkAlt /></a>
         </div>
       </div>
       <div className="etiquettes">
