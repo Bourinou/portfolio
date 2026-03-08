@@ -22,7 +22,7 @@ export default function Navbar() {
             <li><Link href="/#projets" className="lien-nav" onClick={() => setIsMenuOpen(false)}>Projets</Link></li>
             <li><Link href="/#passions" className="lien-nav" onClick={() => setIsMenuOpen(false)}>Passions</Link></li>
             <li><Link href="/#contacts" className="lien-nav" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-            <li><Link href="/portfolio-apprentissage" className="lien-nav lien-nav-portfolio" onClick={() => setIsMenuOpen(false)}>Portfolio</Link></li>
+            <li><Link href="/portfolio-apprentissage" className="lien-nav lien-nav-portfolio" onClick={() => setIsMenuOpen(false)}>Portfolio d'apprentissage</Link></li>
           </ul>
 
           <div
