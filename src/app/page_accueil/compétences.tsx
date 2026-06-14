@@ -27,7 +27,7 @@ export default function Skills() {
           <div className="carte" data-delay="400">
             <div className="icone-competence">🔗</div>
             <h3>Développement Back-end</h3>
-            <p>Connexion web et développement back-end (PHP)</p>
+            <p>Connexion web et développement back-end (C++, PHP)</p>
           </div>
           <div className="carte" data-delay="500">
             <div className="icone-competence">💬</div>

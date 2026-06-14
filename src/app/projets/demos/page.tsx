@@ -1,5 +1,6 @@
 import { Metadata } from "next";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import Image from 'next/image';
 
 export const metadata: Metadata = {
     title: "Demos",
@@ -14,7 +15,7 @@ export default function Demos() {
             <div className="contenu-a-propos">
                 <div className="details-projet">
                     <div className="carte">
-                        <h3>🗳️ Un Système de Vote Complet</h3>
+                        <h3>Un système de vote complet</h3>
                         <p className="description-a-propos">
                             Ce projet, réalisé en groupe lors du semestre 3 du BUT Informatique, consiste en la création
                             d'une application web complète de vote en ligne baptisée "Demos".
@@ -27,7 +28,7 @@ export default function Demos() {
                     </div>
 
                     <div className="carte">
-                        <h3>🏗️ Architecture MVC & PHP</h3>
+                        <h3>Architecture MVC & PHP</h3>
                         <p className="description-a-propos">
                             Le cœur de l'application repose sur une architecture MVC (Modèle-Vue-Contrôleur) stricte,
                             assurant une séparation nette entre la logique métier, l'accès aux données et l'affichage.
@@ -41,7 +42,7 @@ export default function Demos() {
                     </div>
 
                     <div className="carte">
-                        <h3>👥 Gestion des Utilisateurs et Questions</h3>
+                        <h3>Gestion des utilisateurs et des questions</h3>
                         <p className="description-a-propos">
                             L'application gère différents rôles (utilisateurs, organisateurs) et offre des
                             fonctionnalités
@@ -61,8 +62,54 @@ export default function Demos() {
                     </ul>
                 </div>
 
+                <div className="galerie-projet">
+                    <div className="item-galerie">
+                        <Image
+                            alt="Page d'accueil de Demos (non connecté)"
+                            loading="lazy"
+                            src="/images/demos_welcome_page.png"
+                            width={600}
+                            height={400}
+                            style={{ height: '220px', width: 'auto' }}
+                        />
+                        <div className="legende-galerie">Accueil (visiteur)</div>
+                    </div>
+                    <div className="item-galerie">
+                        <Image
+                            alt="Tableau de bord de l'administrateur"
+                            loading="lazy"
+                            src="/images/demos_welcome_page_admin.png"
+                            width={600}
+                            height={400}
+                            style={{ height: '220px', width: 'auto' }}
+                        />
+                        <div className="legende-galerie">Accueil (administrateur)</div>
+                    </div>
+                    <div className="item-galerie">
+                        <Image
+                            alt="Consultation des questions de vote"
+                            loading="lazy"
+                            src="/images/demos_questions.png"
+                            width={600}
+                            height={400}
+                            style={{ height: '220px', width: 'auto' }}
+                        />
+                        <div className="legende-galerie">Liste des questions</div>
+                    </div>
+                    <div className="item-galerie">
+                        <Image
+                            alt="Formulaire de création de question"
+                            loading="lazy"
+                            src="/images/demos_creation_questions.png"
+                            width={600}
+                            height={400}
+                            style={{ height: '220px', width: 'auto' }}
+                        />
+                        <div className="legende-galerie">Création de question</div>
+                    </div>
+                </div>
 
-                <div className="details-projet">
+                <div className="details-projet" style={{ marginTop: '2rem' }}>
                     <a className="bouton-action"
                         href="https://webinfo.iutmontp.univ-montp2.fr/~cerisierr/demos/web/"
                         target="_blank">

@@ -14,7 +14,7 @@ export default function Ndi2024() {
             <div className="contenu-a-propos">
                 <div className="details-projet">
                     <div className="carte">
-                        <h3>🌙 Un Défi National</h3>
+                        <h3>Un défi national</h3>
                         <p className="description-a-propos">
                             La Nuit de l'Info est un défi national rassemblant des étudiants de toute la France pour une
                             nuit blanche de programmation intensive. L'objectif : développer une application web
@@ -26,7 +26,7 @@ export default function Ndi2024() {
                     </div>
 
                     <div className="carte">
-                        <h3>🛠️ Architecture & Intégration</h3>
+                        <h3>Architecture & intégration</h3>
                         <p className="description-a-propos">
                             Mon rôle au sein de l'équipe s'est concentré sur le développement Front-end et
                             l'intégration.
@@ -42,7 +42,7 @@ export default function Ndi2024() {
                     </div>
 
                     <div className="carte">
-                        <h3>🚀 Une Aventure Humaine</h3>
+                        <h3>Une aventure humaine</h3>
                         <p className="description-a-propos">
                             Nous avons également mis un point d'honneur à rendre l'interface intuitive et "responsive",
                             afin qu'elle soit consultable sur tous les supports.

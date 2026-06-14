@@ -27,6 +27,23 @@ export default function Projets() {
                         </div>
                     </Link>
 
+                    <Link href="projets/workflow">
+                        <div className="carte">
+                            <div className="indicateur-carte">
+                                <FaExternalLinkAlt />
+                            </div>
+                            <h3>Workflow Visualizer</h3>
+                            <p className="periode">2026</p>
+                            <p className="description">Outil de visualisation 3D et d'orchestration permettant de déléguer des tâches de code à un agent Claude.</p>
+                            <div className="etiquettes">
+                                <span className="etiquette">PowerShell</span>
+                                <span className="etiquette">Batchfile</span>
+                                <span className="etiquette">Node.js</span>
+                                <span className="etiquette">Agentic AI</span>
+                            </div>
+                        </div>
+                    </Link>
+
                     <Link href="projets/ndi2024">
                         <div className="carte">
                             <div className="indicateur-carte">

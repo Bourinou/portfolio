@@ -16,7 +16,7 @@ export default function PokemonGame() {
       <div className="contenu-a-propos">
         <div className="details-projet">
           <div className="carte">
-            <h3>🎮 Un Duel Stratégique</h3>
+            <h3>Un duel stratégique</h3>
             <p className="description-a-propos">
               Ce projet a pour but de recréer l'expérience captivante du célèbre jeu de cartes Pokémon
               dans une version numérique interactive.
@@ -31,7 +31,7 @@ export default function PokemonGame() {
           </div>
 
           <div className="carte">
-            <h3>⚡ Moteur de Jeu & JavaFX</h3>
+            <h3>Moteur de jeu & JavaFX</h3>
             <p className="description-a-propos">
               J'ai implémenté un moteur de jeu complet à partir d'une base donnée respectant les règles
               officielles simplifiées :
@@ -45,7 +45,7 @@ export default function PokemonGame() {
           </div>
 
           <div className="carte">
-            <h3>🏆 Architecture & Programmation Objet</h3>
+            <h3>Architecture & Programmation Objet</h3>
             <p className="description-a-propos">
               Développé entièrement en Java, ce projet a été le terrain de jeu idéal pour mettre en
               pratique les concepts avancés de la Programmation Orientée Objet (POO).

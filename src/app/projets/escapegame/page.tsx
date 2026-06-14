@@ -15,7 +15,7 @@ export default function EscapeGame() {
       <div className="contenu-a-propos">
         <div className="details-projet">
           <div className="carte">
-            <h3>💡 Mes Premiers Pas</h3>
+            <h3>Mes premiers pas</h3>
             <p className="description-a-propos">
               Ce projet de site "Escape Game" marque le tout début de mon parcours en BUT Informatique.
               Il s'agissait du premier véritable site que j'ai eu à réaliser, avec pour seule consigne
@@ -28,7 +28,7 @@ export default function EscapeGame() {
           </div>
 
           <div className="carte">
-            <h3>🎨 HTML & CSS Pur</h3>
+            <h3>HTML & CSS pur</h3>
             <p className="description-a-propos">
               Contrairement à des projets plus récents, ici, pas de JavaScript, pas de Framework, pas de
               Base de données.
@@ -42,7 +42,7 @@ export default function EscapeGame() {
           </div>
 
           <div className="carte">
-            <h3>🎓 Apprentissage Fondamental</h3>
+            <h3>Apprentissage fondamental</h3>
             <p className="description-a-propos">
               Ce projet, bien que simple techniquement avec le recul, a été crucial. Il m'a permis de
               valider mes acquis de base.
