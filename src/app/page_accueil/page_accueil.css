@@ -2,7 +2,8 @@
 
 .a-propos,
 #formation,
-#passions {
+#passions,
+#experience {
   background: rgba(255, 255, 255, 0.3);
   backdrop-filter: blur(20px);
 }
@@ -81,6 +82,67 @@
   color: var(--cyan-primaire);
   font-weight: 500;
   margin-bottom: 1rem;
+}
+
+/* ====== EXPÉRIENCE ====== */
+
+.chronologie-experience {
+  max-width: 800px;
+  margin: 0 auto;
+  position: relative;
+}
+
+.chronologie-experience::before {
+  content: '';
+  position: absolute;
+  left: 15%;
+  transform: translateX(-50%);
+  top: 0;
+  bottom: 0;
+  width: 4px;
+  background: var(--cyan-primaire);
+  border-radius: 2px;
+}
+
+.chronologie-experience .item-chronologie::before {
+  content: '';
+  position: absolute;
+  left: 15%;
+  transform: translateX(-50%);
+  width: 20px;
+  height: 20px;
+  background: var(--rose-primaire);
+  border-radius: 50%;
+  border: 3px solid white;
+  box-shadow: 0 0 20px rgba(245, 169, 184, 0.5);
+  z-index: 2;
+}
+
+.experience-carte-clickable {
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.experience-carte-clickable:hover {
+  transform: translateY(-6px) scale(1.02);
+  box-shadow: var(--ombre-moyenne), 0 0 25px rgba(245, 169, 184, 0.4);
+}
+
+.experience-details-carte {
+  max-width: 600px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2.5rem;
+  background: var(--fond-carte);
+  border-radius: var(--rayon-bordure);
+  box-shadow: var(--ombre-legere);
+}
+
+.experience-details-carte .bouton-secondaire {
+  margin-top: 1.5rem;
 }
 
 /* ====== PROJETS GRILLE ====== */

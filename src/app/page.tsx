@@ -1,6 +1,7 @@
 import APropos from "@/app/page_accueil/a-propos";
 import Compétences from "@/app/page_accueil/compétences";
 import Formation from "@/app/page_accueil/formation";
+import Experience from "@/app/page_accueil/experience";
 import Projets from "@/app/page_accueil/projets";
 import Passions from "@/app/page_accueil/passions";
 import Contacts from "@/app/page_accueil/contacts";
@@ -28,6 +29,7 @@ export default function Home() {
       <APropos />
       <Compétences />
       <Formation />
+      <Experience />
       <Projets />
       <Passions />
       <Contacts />

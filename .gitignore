@@ -42,4 +42,6 @@ next-env.d.ts
  
 GEMINI.md 
 init-workflow.bat 
-.claude-exit-code.txt 
+.claude-exit-code.txt
+.claude/
+.agent-map.json
