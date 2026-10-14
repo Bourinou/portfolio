@@ -7,7 +7,6 @@ import {
 import {
     MdMail,
     MdPhone,
-    MdLocationPin,
     MdDownload
 } from "react-icons/md";
 
@@ -40,19 +39,6 @@ export default function Contacts() {
                                 <p>
                                     <Link href="tel:+33775773745">+33 7 75 77 37 45</Link>
                                 </p>
-                            </div>
-                        </div>
-
-                        <div className="carte" data-delay="200">
-                            <div className="icone-contact">
-                                <MdLocationPin />
-                            </div>
-                            <div className="details-contact">
-                                <h4>Adresse</h4>
-                                    <Link href="https://maps.app.goo.gl/zvxMB62Pp6QSSKTG8" target="_blank">
-                                        <p>Hôpitaux-Facultés</p>
-                                        <p>Montpellier</p>
-                                    </Link>
                             </div>
                         </div>
 

@@ -1,17 +1,32 @@
 :root {
-  --cyan-primaire: #55CDFC;
-  --rose-primaire: #F7A8B8;
-  --rose-doux: #FAE0E6;
-  --fond-carte: rgba(255, 255, 255, 0.8);
-  --texte-sombre: #2D3748;
-  --texte-clair: #4A5568;
-  --texte-estompe: #718096;
-  --ombre-legere: 0 4px 20px rgba(245, 169, 184, 0.2);
-  --ombre-moyenne: 0 8px 30px rgba(91, 206, 250, 0.25);
-  --ombre-lourde: 0 15px 40px rgba(245, 169, 184, 0.3);
-  --rayon-bordure: 25px;
-  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-  scroll-padding-top: 4rem;
+  --cyan-primaire: #57CCF7;
+  --rose-primaire: #D35EA6;
+  --fond-page: #151018;
+  --fond-carte: #221A28;
+  --texte-sombre: #EDE3EA;
+  --texte-clair: #CDBDC8;
+  --texte-estompe: #A897A3;
+  --ombre-legere: 4px 4px 0 var(--rose-primaire);
+  --ombre-moyenne: 5px 5px 0 var(--rose-primaire);
+  --ombre-lourde: 7px 7px 0 var(--rose-primaire);
+  --rayon-bordure: 8px;
+  --transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+  scroll-padding-top: var(--hauteur-nav);
+
+  /* thème Miku, couleurs du drapeau femboy */
+  --rose-clair: #E4ACCD;
+  --fond-bandeau: #1B1420;
+  --fond-sombre: #0E0A11;
+  --bordure: #3A2A3F;
+  --hauteur-nav: 5.35rem;
+  --police-pixel: var(--font-pixel), monospace;
+  --police-vt: var(--font-vt), monospace;
+
+  /* curseurs Miku 32px (pack "Miku Hatsune" de NaLexnu sur rw-designer.com) ;
+     au-delà de 32px, les navigateurs les remplacent près des bords de la fenêtre */
+  --curseur-normal: url('/curseurs/miku-normal.png') 0 0, auto;
+  --curseur-lien: url('/curseurs/miku-lien.png') 5 0, pointer;
+  --curseur-texte: url('/curseurs/miku-texte.png') 16 15, text;
 }
 
 * {
@@ -21,13 +36,16 @@
 }
 
 html {
+  color-scheme: dark;
+  scrollbar-color: var(--cyan-primaire) var(--fond-page);
   scroll-behavior: smooth;
   font-family: var(--police-primaire);
   line-height: 1.6;
 }
 
 body {
-  background: linear-gradient(135deg, var(--rose-doux) 0%, #FFFFFF 100%);
+  color: var(--texte-sombre);
+  background: var(--fond-page);
   overflow-x: hidden;
   width: 100%;
 }
@@ -39,6 +57,46 @@ body>*:not(.barre-navigation) {
 
 body.apparition>*:not(.barre-navigation) {
   opacity: 1;
+}
+
+::selection {
+  background: var(--rose-primaire);
+  color: #fff;
+}
+
+/* scrollbar façon 2004 */
+::-webkit-scrollbar {
+  width: 14px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--fond-page);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--cyan-primaire);
+  border: 3px solid var(--fond-page);
+  border-radius: 7px;
+}
+
+html,
+body {
+  cursor: var(--curseur-normal);
+}
+
+a,
+button,
+summary,
+label,
+select,
+[role="button"] {
+  cursor: var(--curseur-lien);
+}
+
+input,
+textarea,
+[contenteditable="true"] {
+  cursor: var(--curseur-texte);
 }
 
 ul {
@@ -58,13 +116,13 @@ h4,
 h5,
 h6 {
   font-weight: 700;
-  line-height: 1.2;
+  line-height: 1.3;
 }
 
 /* ====== LAYOUT ====== */
 
 main {
-  padding-top: 4.5rem;
+  padding-top: var(--hauteur-nav);
 }
 
 section {
@@ -87,24 +145,31 @@ section {
 }
 
 .titre-section {
-  font-size: 2.5rem;
-  font-weight: 700;
+  font-family: var(--police-pixel);
+  font-size: 1.6rem;
+  font-weight: 400;
   text-align: center;
-  margin-bottom: 3rem;
-  color: var(--texte-sombre);
+  margin-bottom: 3.2rem;
+  color: #fff;
+  text-shadow: 3px 3px 0 var(--rose-primaire);
   position: relative;
+  line-height: 1.6;
 }
 
 .titre-section::after {
   content: '';
   position: absolute;
-  bottom: -10px;
+  bottom: -22px;
   left: 50%;
   transform: translateX(-50%);
-  width: 80px;
-  height: 4px;
-  background: var(--cyan-primaire);
-  border-radius: 2px;
+  /* le drapeau en 7 carrés pixel */
+  width: 93px;
+  height: 9px;
+  background: linear-gradient(90deg,
+      var(--rose-primaire) 0 9px, transparent 9px 14px, var(--rose-clair) 14px 23px, transparent 23px 28px,
+      #fff 28px 37px, transparent 37px 42px, var(--cyan-primaire) 42px 51px, transparent 51px 56px,
+      #fff 56px 65px, transparent 65px 70px, var(--rose-clair) 70px 79px, transparent 79px 84px,
+      var(--rose-primaire) 84px 93px);
 }
 
 /* ====== NAVIGATION ====== */
@@ -112,49 +177,73 @@ section {
 .barre-navigation {
   position: fixed;
   width: 100%;
-  background: rgba(255, 255, 255, 0.95);
+  background: var(--fond-bandeau);
   backdrop-filter: blur(20px);
-  padding: 1rem 0;
+  border-bottom: 2px solid var(--rose-primaire);
   transition: var(--transition);
   white-space: nowrap;
-  z-index: 10;
+  z-index: 50;
 }
 
 .conteneur-nav {
-  padding: 0 2rem;
+  padding: 0.7rem 2rem;
   display: flex;
   justify-content: space-evenly;
   align-items: center;
 }
 
 .logo-nav {
-  max-width: 10%;
-  font-size: 1.8rem;
-  font-weight: 800;
-  background: transparent;
-  color: var(--rose-primaire);
-  animation: lueurLogo 1.5s ease-in-out infinite alternate;
+  font-family: var(--police-pixel);
+  font-size: 1.15rem;
+  font-weight: 400;
+  color: #fff;
+  text-shadow: 2px 2px 0 var(--rose-primaire), 4px 4px 0 var(--cyan-primaire);
+  animation: lueurLogo 1.2s ease-in-out infinite alternate;
 }
 
 .nav-menu {
   display: flex;
-  gap: 2rem;
+  gap: 0.6rem;
 }
 
 .lien-nav {
-  color: var(--texte-sombre);
-  font-weight: 500;
-  padding: 0 1rem;
+  font-family: var(--police-vt);
+  font-size: 1.35rem;
+  color: #fff;
+  padding: 0.15rem 0.8rem;
+  border-radius: 999px;
 }
 
 .lien-nav:hover {
-  color: var(--rose-primaire);
-  text-shadow: 0 0 2px var(--rose-primaire);
+  background: var(--rose-clair);
+  color: var(--fond-page);
+}
+
+/* bandeau défilant sous la nav */
+.marquee-miku {
+  overflow: hidden;
+  background: var(--fond-sombre);
+  border-top: 1px solid var(--bordure);
+  color: var(--cyan-primaire);
+  font-family: var(--police-vt);
+  font-size: 1.15rem;
+  line-height: 1.6rem;
+  height: 1.6rem;
+}
+
+.marquee-miku-piste {
+  display: inline-block;
+  padding-left: 100%;
+  animation: defilement 38s linear infinite;
+}
+
+.marquee-miku-piste span:nth-child(even) {
+  color: var(--rose-clair);
 }
 
 .hamburger {
   display: none;
-  cursor: pointer;
+  cursor: var(--curseur-lien);
 }
 
 .bar {
@@ -163,11 +252,16 @@ section {
   height: 3px;
   margin: 5px auto;
   transition: all 0.3s ease-in-out;
-  background-color: var(--rose-primaire);
+  background-color: #fff;
   border-radius: 2px;
+  box-shadow: 1px 1px 0 var(--rose-primaire);
 }
 
 @media (max-width: 1100px) {
+  .conteneur-nav {
+    justify-content: space-between;
+  }
+
   .hamburger {
     display: block;
   }
@@ -188,18 +282,18 @@ section {
     position: fixed;
     left: 0;
     right: 0;
-    top: 70px;
+    top: var(--hauteur-nav);
     flex-direction: column;
     width: 100%;
     text-align: center;
     transition: 0.3s;
-    box-shadow: var(--ombre-legere);
-    padding: 2rem 0;
+    padding: 1.5rem 0;
     transform: translateX(-100%);
   }
 
   .nav-menu.active {
-    background: rgb(255, 255, 255);
+    background: var(--fond-bandeau);
+    border-bottom: 2px solid var(--rose-primaire);
     transform: translateX(0);
   }
 }
@@ -210,10 +304,10 @@ section {
   min-height: 100vh;
   display: flex;
   align-items: center;
-  padding: 0;
+  padding: var(--hauteur-nav) 0 0;
   position: relative;
   overflow: hidden;
-  margin-top: -4.5rem;
+  margin-top: calc(-1 * var(--hauteur-nav));
 }
 
 .conteneur-banniere {
@@ -226,26 +320,22 @@ section {
 }
 
 .nom-banniere {
-  font-size: 4rem;
-  font-weight: 900;
-  background: transparent;
-  -webkit-text-stroke: 2px var(--texte-sombre);
-  color: var(--cyan-primaire);
-  margin-bottom: 1rem;
-  text-shadow: 4px 4px 0px var(--rose-primaire);
+  font-family: var(--police-pixel);
+  font-size: 3.2rem;
+  font-weight: 400;
+  line-height: 1.3;
+  /* nom rempli avec les rayures du drapeau */
+  background: linear-gradient(180deg,
+      var(--rose-primaire) 0 14.28%, var(--rose-clair) 14.28% 28.57%, #fff 28.57% 42.85%,
+      var(--cyan-primaire) 42.85% 57.14%, #fff 57.14% 71.42%, var(--rose-clair) 71.42% 85.71%,
+      var(--rose-primaire) 85.71% 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-stroke: 2px var(--fond-page);
+  color: transparent;
+  margin-bottom: 1.2rem;
+  filter: drop-shadow(4px 4px 0 var(--rose-primaire));
   animation: lueurNom 1.5s ease-in-out infinite alternate;
-  position: relative;
-}
-
-.nom-banniere::before {
-  content: attr(data-text);
-  position: absolute;
-  left: 0;
-  top: -40%;
-  color: var(--rose-primaire);
-  opacity: 0.1;
-  clip-path: inset(0 100% 0 0);
-  animation: revelationTexte 1.5s cubic-bezier(0.42, 0, 0.58, 1) forwards;
 }
 
 .details-banniere {
@@ -253,21 +343,21 @@ section {
 }
 
 .age-banniere {
-  font-size: 1.2rem;
-  color: var(--rose-primaire);
-  font-weight: 600;
-  margin-bottom: 0.5rem;
+  font-family: var(--police-vt);
+  font-size: 1.6rem;
+  color: var(--rose-clair);
+  margin-bottom: 0.3rem;
 }
 
 .titre-banniere {
   font-size: 1.5rem;
   color: var(--texte-sombre);
-  font-weight: 600;
+  font-weight: 800;
   margin-bottom: 0.5rem;
 }
 
 .sous-titre-banniere {
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   color: var(--texte-clair);
   margin-bottom: 1rem;
 }
@@ -276,13 +366,20 @@ section {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1.5rem;
+  gap: 1.2rem;
   justify-content: center;
   flex-wrap: wrap;
 }
 
 .actions-banniere .bouton-action {
-  padding: 1.35rem 2rem;
+  padding: 1.1rem 2rem;
+}
+
+.gif-404 {
+  display: block;
+  width: 180px;
+  height: auto;
+  margin: 0 auto 1rem;
 }
 
 /* ====== BOUTONS ====== */
@@ -294,23 +391,33 @@ section {
   text-align: center;
   gap: 0.6rem;
   border-radius: var(--rayon-bordure);
-  font-weight: 600;
-  background: var(--rose-primaire);
-  box-shadow: 0 4px 15px rgba(247, 168, 184, 0.4);
+  font-weight: 800;
+  color: var(--fond-page);
+  background: var(--cyan-primaire);
+  border: 2px solid var(--cyan-primaire);
+  box-shadow: 4px 4px 0 var(--rose-primaire);
   padding: 0.5rem 1.25rem;
   margin-top: 1rem;
 }
 
 .bouton-action:hover,
 .bouton-secondaire:hover {
-  transform: translateY(-2px) scale(1.05);
-  box-shadow: 0 0 2px rgba(247, 168, 184, 0.6);
+  transform: translate(-2px, -2px);
+  box-shadow: 6px 6px 0 var(--rose-primaire);
   filter: brightness(1.075);
 }
 
+.bouton-action:active,
+.bouton-secondaire:active {
+  transform: translate(2px, 2px);
+}
+
 .bouton-secondaire {
-  border: 2px solid var(--rose-primaire);
+  color: #fff;
+  background: rgba(228, 172, 205, 0.1);
+  border: 2px solid var(--rose-clair);
   border-radius: var(--rayon-bordure);
+  box-shadow: 4px 4px 0 var(--rose-primaire);
   padding: 0.8rem 1.5rem;
   font-size: 0.95rem;
   font-weight: 600;
@@ -323,13 +430,13 @@ section {
   padding: 2rem;
   border-radius: var(--rayon-bordure);
   box-shadow: var(--ombre-legere);
-  border: 1px solid rgba(245, 169, 184, 0.2);
+  border: 2px solid var(--cyan-primaire);
   transition: var(--transition);
   position: relative;
 }
 
 .carte:hover {
-  transform: translateY(-10px) scale(1.02);
+  transform: translate(-3px, -3px);
   box-shadow: var(--ombre-lourde);
   border-color: var(--rose-primaire);
 }
@@ -337,7 +444,8 @@ section {
 .carte h3 {
   color: var(--texte-sombre);
   margin-bottom: 1rem;
-  font-size: 1.5rem;
+  font-size: 1.4rem;
+  font-weight: 800;
   display: flex;
   align-items: center;
   gap: 0.5rem;
@@ -367,19 +475,21 @@ section {
 }
 
 .etiquette {
-  background: var(--cyan-primaire);
-  color: var(--texte-sombre);
-  padding: 0.3rem 0.8rem;
-  border-radius: 15px;
-  font-size: 0.8rem;
-  font-weight: 600;
+  background: rgba(87, 204, 247, 0.12);
+  color: #fff;
+  border: 1px solid var(--cyan-primaire);
+  padding: 0 0.6rem;
+  border-radius: 4px;
+  font-family: var(--police-vt);
+  font-size: 1.2rem;
 }
 
 /* ====== PÉRIODE ====== */
 
 .periode {
-  color: var(--cyan-primaire);
-  font-weight: 500;
+  font-family: var(--police-vt);
+  font-size: 1.4rem;
+  color: var(--rose-clair);
   margin-bottom: 1rem;
   text-align: center;
   padding-bottom: 1%;
@@ -388,48 +498,78 @@ section {
 /* ====== PIED DE PAGE ====== */
 
 .pied-page {
-  background: rgba(255, 255, 255, 0.8);
-  padding: 2rem 0;
+  background: var(--fond-sombre);
+  padding: 2rem 0 1.5rem;
   text-align: center;
-  border-top: 1px solid rgba(245, 169, 184, 0.2);
-  backdrop-filter: blur(10px);
+  border-top: 2px solid var(--rose-primaire);
 }
 
 .pied-page p {
-  color: var(--texte-estompe);
+  color: var(--rose-clair);
+}
+
+.signature-footer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 1rem;
+}
+
+.gif-footer {
+  height: 100px;
+  width: auto;
+}
+
+/* badge façon bouton 88x31 des années 2000 */
+.badge-techno {
+  padding: 0.1rem 0.8rem;
+  font-family: var(--police-vt);
+  font-size: 1.2rem;
+  color: var(--fond-page);
+  background: var(--cyan-primaire);
+  border: 2px solid var(--rose-clair);
 }
 
 /* ====== ANIMATIONS ====== */
 
-@keyframes revelationTexte {
-  to {
-    clip-path: inset(0 0 0 0);
-  }
-}
-
 @keyframes lueurNom {
-
-  0%,
-  25% {
-    text-shadow: 3px 3px 0px var(--texte-sombre);
+  0% {
+    filter: drop-shadow(3px 3px 0 var(--rose-primaire));
   }
 
-  75%,
   100% {
-    text-shadow: 5px 5px 0px var(--rose-primaire);
+    filter: drop-shadow(6px 6px 0 var(--rose-primaire)) drop-shadow(0 0 10px rgba(87, 204, 247, 0.6));
   }
 }
 
 @keyframes lueurLogo {
-
-  0%,
-  25% {
-    text-shadow: 2px 2px 0px var(--texte-sombre);
+  0% {
+    text-shadow: 2px 2px 0 var(--rose-primaire), 4px 4px 0 var(--cyan-primaire);
   }
 
-  75%,
   100% {
-    text-shadow: 3px 3px 0px var(--texte-sombre);
+    text-shadow: 2px 2px 0 var(--rose-primaire), 4px 4px 0 var(--cyan-primaire), 0 0 12px #fff;
+  }
+}
+
+@keyframes defilement {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(-100%);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
   }
 }
 
@@ -445,12 +585,12 @@ section {
     padding: 1.5rem;
   }
 
-  .carte:hover {
-    transform: translateY(-5px);
+  .titre-section {
+    font-size: 1.15rem;
   }
 
-  .titre-section {
-    font-size: 2rem;
+  .nom-banniere {
+    font-size: 1.9rem;
   }
 
   .bouton-action {
@@ -469,7 +609,8 @@ section {
 
   .conteneur,
   .conteneur-nav {
-    padding: 0 0.75rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
   }
 
   .conteneur {
@@ -478,10 +619,18 @@ section {
 
   .carte {
     padding: 1rem;
-    border-radius: 15px;
   }
 
   section {
     padding: 3rem 0;
+  }
+
+  .logo-nav {
+    font-size: 0.9rem;
+  }
+
+  .nom-banniere {
+    font-size: 1.45rem;
+    -webkit-text-stroke-width: 1px;
   }
 }

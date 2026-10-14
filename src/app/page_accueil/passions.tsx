@@ -1,4 +1,5 @@
 import { FaVrCardboard } from "react-icons/fa";
+import Image from "next/image";
 
 export default function Passions() {
     return (
@@ -29,7 +30,7 @@ export default function Passions() {
                         <p>Technologies immersives et expériences comme la réalité virtuelle / augmentée.</p>
                     </div>
                     <div className="carte" data-delay="400">
-                        <div className="icone-passion">🎤</div>
+                        <div className="icone-passion"><Image src="/miku/miku-poireaux.gif" alt="" width={498} height={498} unoptimized className="gif-passion" /></div>
                         <h3>Vocaloids</h3>
                         <p>Passionné par l'univers des Vocaloids, notamment Hatsune Miku, et la musique synthétique
                             japonaise.</p>

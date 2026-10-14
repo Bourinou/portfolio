@@ -6,14 +6,21 @@ import Projets from "@/app/page_accueil/projets";
 import Passions from "@/app/page_accueil/passions";
 import Contacts from "@/app/page_accueil/contacts";
 import "@/app/page_accueil/page_accueil.css";
+import Image from "next/image";
 
 export default function Home() {
   return (
     <>
       <section className="banniere" id="accueil">
         <div className="conteneur-banniere">
-          <div>
-            <h1 className="nom-banniere" data-text="Dimitri PAPE">Dimitri PAPE</h1>
+          <p className="bienvenue-banniere">Bienvenue sur mon portfolio</p>
+          <div className="cadre-banniere">
+            <div className="miku-hello" aria-hidden="true">
+              <span className="bulle-hello">Hello!</span>
+              <Image src="/miku/miku-hello.webp" alt="" width={322} height={196} unoptimized loading="eager" className="gif-banniere" />
+            </div>
+            <span className="badge-01" aria-hidden="true">01</span>
+            <h1 className="nom-banniere">Dimitri PAPE</h1>
             <div className="details-banniere">
               <p className="age-banniere"><span id="age"> ans</span></p>
               <p className="titre-banniere">Étudiant en BUT Informatique</p>

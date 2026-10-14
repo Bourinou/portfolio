@@ -1,5 +1,4 @@
 import { Metadata } from "next";
-import { FaExternalLinkAlt } from "react-icons/fa";
 import Image from 'next/image';
 
 export const metadata: Metadata = {
@@ -107,14 +106,6 @@ export default function Demos() {
                         />
                         <div className="legende-galerie">Création de question</div>
                     </div>
-                </div>
-
-                <div className="details-projet" style={{ marginTop: '2rem' }}>
-                    <a className="bouton-action"
-                        href="https://webinfo.iutmontp.univ-montp2.fr/~cerisierr/demos/web/"
-                        target="_blank">
-                        Voir le site <FaExternalLinkAlt />
-                    </a>
                 </div>
             </div>
             <div className="etiquettes">

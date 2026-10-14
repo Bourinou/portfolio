@@ -1,11 +1,106 @@
+/* ====== BANNIÈRE DE L'ACCUEIL ====== */
+
+.bienvenue-banniere {
+  font-family: var(--police-vt);
+  font-size: 1.6rem;
+  color: var(--rose-clair);
+  margin-bottom: 0.8rem;
+  animation: clignote 1s steps(1) infinite;
+}
+
+.cadre-banniere {
+  background: var(--fond-carte);
+  border: 3px solid var(--cyan-primaire);
+  border-radius: 14px;
+  box-shadow: 8px 8px 0 var(--rose-primaire);
+  padding: 3rem 2.5rem 2.5rem;
+  position: relative;
+  /* place pour Miku + la bulle au-dessus de la carte */
+  margin-top: 7rem;
+}
+
+.badge-01 {
+  position: absolute;
+  top: -1.1rem;
+  right: -1.1rem;
+  background: var(--rose-primaire);
+  color: #fff;
+  font-family: var(--police-pixel);
+  font-size: 1rem;
+  padding: 0.6rem 0.7rem;
+  border: 3px solid #fff;
+  box-shadow: 3px 3px 0 var(--cyan-primaire);
+  transform: rotate(12deg);
+}
+
+/* Miku dépasse du haut de la carte (le bas du GIF est coupé) */
+.miku-hello {
+  position: absolute;
+  left: 1.5rem;
+  bottom: calc(100% - 3px);
+  z-index: -1;
+}
+
+.gif-banniere {
+  display: block;
+  width: 200px;
+  height: auto;
+}
+
+.bulle-hello {
+  position: absolute;
+  /* centrée au-dessus de la tête (≈28% de la largeur du GIF) */
+  left: 28%;
+  bottom: calc(100% + 10px);
+  transform: translateX(-50%);
+  padding: 0.1rem 0.6rem;
+  background: var(--fond-carte);
+  border: 2px solid var(--rose-primaire);
+  border-radius: 10px;
+  box-shadow: 2px 2px 0 var(--rose-primaire);
+  color: #fff;
+  font-family: var(--police-pixel);
+  font-size: 0.7rem;
+  line-height: 1.8;
+  white-space: nowrap;
+  animation: bulleHello 1.2s ease-in-out infinite alternate;
+}
+
+.bulle-hello::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  margin-left: -6px;
+  bottom: -7px;
+  width: 10px;
+  height: 10px;
+  background: var(--fond-carte);
+  border-right: 2px solid var(--rose-primaire);
+  border-bottom: 2px solid var(--rose-primaire);
+  transform: rotate(45deg);
+}
+
+@keyframes clignote {
+  50% {
+    opacity: 0;
+  }
+}
+
+@keyframes bulleHello {
+  to {
+    transform: translate(-50%, -4px);
+  }
+}
+
 /* ====== SECTIONS BACKGROUND ====== */
 
 .a-propos,
 #formation,
 #passions,
 #experience {
-  background: rgba(255, 255, 255, 0.3);
-  backdrop-filter: blur(20px);
+  background: var(--fond-bandeau);
+  border-top: 1px solid var(--bordure);
+  border-bottom: 1px solid var(--bordure);
 }
 
 /* ====== COMPÉTENCES ====== */
@@ -18,59 +113,71 @@
 }
 
 .icone-competence {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-  display: block;
-  transition: all 0.3s ease;
+  font-size: 2.15rem;
+  margin: -0.4rem 0 0.5rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.icone-competence img {
+  height: 1em;
+  width: auto;
 }
 
 /* ====== FORMATION ====== */
 
-.chronologie-formation {
+.chronologie-formation,
+.chronologie-experience {
   max-width: 800px;
   margin: 0 auto;
   position: relative;
+  padding-left: 40px;
 }
 
-.chronologie-formation::before {
+.chronologie-formation::before,
+.chronologie-experience::before {
   content: '';
   position: absolute;
-  left: 15%;
-  transform: translateX(-50%);
+  left: 0;
   top: 0;
   bottom: 0;
-  width: 4px;
-  background: var(--cyan-primaire);
-  border-radius: 2px;
+  width: 2px;
+  background: #4A3550;
 }
 
 .item-chronologie {
   display: flex;
-  align-items: center;
-  margin-bottom: 3rem;
+  flex-direction: column;
+  margin-bottom: 2.25rem;
   position: relative;
-  gap: 2rem;
+  gap: 0.6rem;
 }
 
+/* point de la frise : bleu pour l'étape la plus récente, rose pour les autres */
 .item-chronologie::before {
   content: '';
   position: absolute;
-  left: 15%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: var(--rose-primaire);
+  left: -49px;
+  top: 4px;
+  width: 14px;
+  height: 14px;
+  background: var(--fond-page);
   border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 20px rgba(245, 169, 184, 0.5);
+  border: 3px solid var(--rose-primaire);
   z-index: 2;
 }
 
+.item-chronologie:first-child::before {
+  border-color: var(--cyan-primaire);
+}
+
 .date-chronologie {
-  flex: 0 0 120px;
-  font-weight: 600;
-  color: var(--rose-primaire);
-  font-size: 1.1rem;
+  font-family: var(--police-vt);
+  color: var(--rose-clair);
+  font-size: 1.5rem;
+  line-height: 1.2;
 }
 
 .contenu-chronologie h3 {
@@ -80,52 +187,14 @@
 
 .etablissement {
   color: var(--cyan-primaire);
-  font-weight: 500;
+  font-weight: 700;
   margin-bottom: 1rem;
 }
 
 /* ====== EXPÉRIENCE ====== */
 
-.chronologie-experience {
-  max-width: 800px;
-  margin: 0 auto;
-  position: relative;
-}
-
-.chronologie-experience::before {
-  content: '';
-  position: absolute;
-  left: 15%;
-  transform: translateX(-50%);
-  top: 0;
-  bottom: 0;
-  width: 4px;
-  background: var(--cyan-primaire);
-  border-radius: 2px;
-}
-
-.chronologie-experience .item-chronologie::before {
-  content: '';
-  position: absolute;
-  left: 15%;
-  transform: translateX(-50%);
-  width: 20px;
-  height: 20px;
-  background: var(--rose-primaire);
-  border-radius: 50%;
-  border: 3px solid white;
-  box-shadow: 0 0 20px rgba(245, 169, 184, 0.5);
-  z-index: 2;
-}
-
 .experience-carte-clickable {
-  cursor: pointer;
-  transition: all 0.3s ease;
-}
-
-.experience-carte-clickable:hover {
-  transform: translateY(-6px) scale(1.02);
-  box-shadow: var(--ombre-moyenne), 0 0 25px rgba(245, 169, 184, 0.4);
+  cursor: var(--curseur-lien);
 }
 
 .experience-details-carte {
@@ -164,11 +233,6 @@
   min-height: 19rem;
 }
 
-.carte.mis-en-avant {
-  border: 2px solid var(--rose-primaire);
-  box-shadow: var(--ombre-lourde);
-}
-
 .grille-projets .carte h3 {
   flex-direction: column;
 }
@@ -183,7 +247,8 @@
   right: 1.5rem;
   width: 40px;
   height: 40px;
-  background: rgba(255, 255, 255, 0.9);
+  background: var(--fond-page);
+  border: 2px solid var(--cyan-primaire);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -217,6 +282,11 @@
   margin-top: -1rem;
 }
 
+.gif-passion {
+  height: 110px;
+  width: auto;
+}
+
 /* ====== CONTACT ====== */
 
 .contenu-contact {
@@ -240,29 +310,52 @@
 .icone-contact {
   width: 60px;
   height: 60px;
-  background: var(--cyan-primaire);
+  background: var(--fond-page);
+  border: 2px solid var(--cyan-primaire);
+  box-shadow: 3px 3px 0 var(--rose-primaire);
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 1rem;
   font-size: 2rem;
-  color: var(--texte-sombre);
+  color: var(--cyan-primaire);
 }
 
 .details-contact h4 {
   margin-bottom: 0.5rem;
+  font-family: var(--police-vt);
+  font-size: 1.4rem;
+  font-weight: 400;
+  color: var(--cyan-primaire);
 }
 
 .details-contact a {
   color: var(--texte-clair);
 }
 
+.details-contact .bouton-action {
+  color: #fff;
+  background: rgba(87, 204, 247, 0.1);
+}
+
 /* ====== RESPONSIVE PAGE ACCUEIL ====== */
 
 @media (max-width: 768px) {
-  .nom-banniere {
-    font-size: 2.5rem;
+  .cadre-banniere {
+    padding: 2.5rem 1.2rem 2rem;
+  }
+
+  .miku-hello {
+    left: 0.5rem;
+  }
+
+  .gif-banniere {
+    width: 130px;
+  }
+
+  .bulle-hello {
+    font-size: 0.55rem;
   }
 
   .grille-competences,
@@ -276,44 +369,9 @@
     align-items: center;
   }
 
-  .item-chronologie {
-    display: block;
-    margin-bottom: 2rem;
-    padding-left: 2rem;
-  }
-
-  .date-chronologie {
-    flex: 0 0 auto;
-    max-width: 40%;
-    padding-left: 0.5rem;
-    margin-bottom: 0.75rem;
-    white-space: normal;
-    overflow-wrap: break-word;
-  }
-
   .contenu-chronologie {
     margin-left: 0;
     margin-top: 0;
     width: 100%;
-  }
-
-  .chronologie-formation::before {
-    left: 10px;
-    transform: none;
-  }
-
-  .item-chronologie::before {
-    left: 10px;
-    transform: translateX(-50%);
-  }
-
-  .item-chronologie .carte:hover {
-    transform: translateY(-6px) scale(1.01);
-  }
-}
-
-@media (max-width: 480px) {
-  .nom-banniere {
-    font-size: 2rem;
   }
 }

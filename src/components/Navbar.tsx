@@ -36,6 +36,17 @@ export default function Navbar() {
             <span className="bar"></span>
           </div>
         </div>
+        <div className="marquee-miku" aria-hidden="true">
+          <div className="marquee-miku-piste">
+            <span>BUT Informatique à l&apos;IUT de Montpellier</span>
+            <span>&nbsp;♪&nbsp;</span>
+            <span>Stage chez Actia Railway, avril – juillet 2026</span>
+            <span>&nbsp;♪&nbsp;</span>
+            <span>Dernier projet : Workflow Visualizer</span>
+            <span>&nbsp;♪&nbsp;</span>
+            <span>CV à télécharger tout en bas</span>
+          </div>
+        </div>
       </nav>
     </>
   );

@@ -10,11 +10,11 @@ export default function Projets() {
                 <div className="grille-projets">
 
                     <Link href="projets/demos">
-                        <div className="carte mis-en-avant">
+                        <div className="carte">
                             <div className="indicateur-carte">
                                 <FaExternalLinkAlt />
                             </div>
-                            <h3>Site de Vote (Demos) ⭐</h3>
+                            <h3>Site de Vote (Demos)</h3>
                             <p className="periode">2024-2025</p>
                             <p className="description">Application web de vote en ligne avec gestion d'utilisateurs et questions
                                 (MVC, PHP).</p>

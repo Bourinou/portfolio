@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Poppins } from "next/font/google";
+import { M_PLUS_Rounded_1c, Press_Start_2P, VT323 } from "next/font/google";
 import "./globals.css";
 import Navbar from "@/components/Navbar";
 import PageLoadEffects from "@/components/PageLoadEffects";
@@ -14,10 +14,24 @@ export const metadata: Metadata = {
   description: "Portfolio de PAPE Dimitri.",
 };
 
-const poppins = Poppins({
+const mplus = M_PLUS_Rounded_1c({
   subsets: ["latin"],
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
+  weight: ["400", "500", "700", "800"],
   display: "swap",
+});
+
+const pixel = Press_Start_2P({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-pixel",
+});
+
+const vt = VT323({
+  subsets: ["latin"],
+  weight: "400",
+  display: "swap",
+  variable: "--font-vt",
 });
 
 export default function RootLayout({
@@ -26,7 +40,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="fr" className={poppins.className}>
+    <html lang="fr" className={`${mplus.className} ${pixel.variable} ${vt.variable}`}>
       <body>
         <Navbar />
         <PageLoadEffects />
